@@ -8,7 +8,7 @@ var client = mqtt.connect('mqtt://52.78.82.238'); // 52.78.82.238은 EC2 인스�
 var file_system = require('fs');
 
 // 파일 데이터 가져오기
-file = '(file_name)';
+file = 'LostArk.jpg';
 data = file_system.readFileSync(file);
 
 // 데이터 전송용 버퍼 생성
