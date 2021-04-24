@@ -16,5 +16,6 @@ client.on('connect', function () {
 client.on('message', function (topic, message) {
       data = JSON.parse(message);
       file_system.writeFileSync('LostArk2.jpg', data.data); // 'LostArk2'라는 이름으로 파일 생성
+      console.log(topic, message.toString());
       client.end();
 });
