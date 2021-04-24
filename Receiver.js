@@ -15,6 +15,6 @@ client.on('connect', function () {
 // 파일 수신
 client.on('message', function (topic, message) {
       data = JSON.parse(message);
-      fs.writeFileSync(data.name, data.data);
+      fs.writeFileSync('LostArk2.jpg', data.data);
       client.end();
 });
