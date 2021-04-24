@@ -9,13 +9,15 @@ var file_system = require('fs');
 
 // client 연결
 client.on('connect', function () {
-      client.subscribe('hello/file', () => {console.log('subscribe to hello/file');}); // hello/file
+      client.subscribe('hello/file', () => {
+        console.log('subscribe to hello/file');}); // hello/file
 });
 
 // 파일 수신
 client.on('message', function (topic, message) {
       data = JSON.parse(message);
       file_system.writeFileSync('LostArk2.jpg', data.data); // 'LostArk2'라는 이름으로 파일 생성
-      console.log(topic, message.toString());
+      console.log(data.data);
+//      console.log(topic, message.toString());
       client.end();
 });
