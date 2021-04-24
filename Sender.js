@@ -24,7 +24,7 @@ client.on('connect', function() {
 });
 
 // 파일 전송 확인
-client.on('message', function (topic, message) {
-  console.log(topic + ' : send OK');
+client.on('data', function (topic, data) {
+  console.log(topic + data.toString());
   client.end();
 })
