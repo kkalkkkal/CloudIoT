@@ -11,11 +11,13 @@ AWS.config.region = 'ap-northeast-2';
 AWS.config.apiVersions = {
     s3: '2006-03-01',
 };
-// var s3 = new AWS.S3({ 
-//     "accessKeyId": "...",
-//     "secretAccessKey": "..."
-// });
-var s3 = new AWS.S3();
+
+var s3 = new AWS.S3({
+    "accessKeyId": "AKIAV7ANXPMGIEZBIJZ2",
+    "secretAccessKey": "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"
+});
+
+//var s3 = new AWS.S3();
 
 // Bucket Creation Function
 function createBucket(params) {
