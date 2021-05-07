@@ -34,7 +34,7 @@ var test = async function () {
         console.log('-- Create Bucket --');
         // Bucket Creation Request Parameters
         var cb_params = {
-            Bucket: "cws-lab-s3-v2",
+            Bucket: "kkal-lab-s3-v2",
         };
         var res1 = await createBucket(cb_params);
         console.log(res1);
