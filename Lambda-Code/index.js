@@ -30,7 +30,8 @@ exports.handler = async (event) => {
              Body: fs.createReadStream("./pmd_logo.png")
          };
 
-    createObject(co_params1);
+     var res2 = await createObject(co_params1);
+     console.log(res2);
 
     // TODO implement
     const response = {
