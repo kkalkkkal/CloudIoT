@@ -39,7 +39,7 @@ var test = async function () {
         // 2nd Object
         const co_params2 = {
             Bucket: "2021-kkalkkkkal-s3-test",
-            Key: 'images/LostArk.jpg',
+            Key: 'image/LostArk.jpg',
             Body: fs.createReadStream("../LostArk.jpg")
         };
         var res3 = await createObject(co_params2);
