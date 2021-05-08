@@ -3,7 +3,7 @@
 /*Lambda Invoke Code*/
 
 var AWS = require('aws-sdk');
-AWS.config.region = 'ap-northeast-2’;
+AWS.config.region = 'ap-northeast-2';
 var lambda = new AWS.Lambda ( {
   "apiVersion" : '2015-03-31',
   "accessKeyId": "AKIAV7ANXPMGIEZBIJZ2",
