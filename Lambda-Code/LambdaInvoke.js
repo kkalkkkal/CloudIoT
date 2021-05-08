@@ -10,7 +10,7 @@ var lambda = new AWS.Lambda ( {
   "secretAccessKey": "07X83K5gmAbZcoMwbn9vKl+aFZ/+CVsY9MoB+LoH"
 } );
 
-const exp = { "Bucket" : "2021-kkalkkkal-s3-test", "Key" : "image/pmd_logo.png" };
+const exp = {. "Bucket" : "2021-kkalkkkal-s3-test", "Key" : "image/pmd_logo.png". };
 
 var params = {
   FunctionName : "index", // or Function ARN
