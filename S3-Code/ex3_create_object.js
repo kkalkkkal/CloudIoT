@@ -29,7 +29,7 @@ var test = async function () {
     try {
         // 1st Object
         const co_params1 = {
-            Bucket: "2021-kkalkkkkal-s3-test",
+            Bucket: "2021-kkalkkkal-s3-test",
             Key: 'image/hawaiian-pizza.jpg',
             Body: fs.createReadStream("./hawaiian-pizza.jpg")
         };
