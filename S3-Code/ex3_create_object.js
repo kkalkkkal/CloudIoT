@@ -1,6 +1,6 @@
 
 // ------------------------------------------------------------------
-// S3 Example code: Create a Bucket
+// S3 Example code: Create a Objects
 // ------------------------------------------------------------------
 
 var AWS = require('aws-sdk');
@@ -10,11 +10,11 @@ AWS.config.region = 'ap-northeast-2';
 AWS.config.apiVersions = {
     s3: '2006-03-01',
 };
-// var s3 = new AWS.S3({
-//     "accessKeyId": "...",
-//     "secretAccessKey": "..."
-// });
-var s3 = new AWS.S3();
+var s3 = new AWS.S3({
+    "accessKeyId": "AKIAV7ANXPMGIEZBIJZ2",
+    "secretAccessKey": "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"
+});
+//var s3 = new AWS.S3();
 
 function createObject(params) {
     return new Promise(function (resolve, reject) {
@@ -29,18 +29,18 @@ var test = async function () {
     try {
         // 1st Object
         const co_params1 = {
-            Bucket: "cws-lab-s3-v2",
-            Key: 'images/shinhyeseon.jpg',
-            Body: fs.createReadStream("./shinhyeseon.jpg")
+            Bucket: "2021-kkalkkkkal-s3-test",
+            Key: 'image/hawaiian-pizza.jpg',
+            Body: fs.createReadStream("./hawaiian-pizza.jpg")
         };
         var res2 = await createObject(co_params1);
         console.log(res2);
 
         // 2nd Object
         const co_params2 = {
-            Bucket: "cws-lab-s3-v2",
-            Key: 'images/lunmeikwai.jpg',
-            Body: fs.createReadStream("./lunmeikwai.jpg")
+            Bucket: "2021-kkalkkkkal-s3-test",
+            Key: 'images/LostArk.jpg',
+            Body: fs.createReadStream("../LostArk.jpg")
         };
         var res3 = await createObject(co_params2);
         console.log(res3);
