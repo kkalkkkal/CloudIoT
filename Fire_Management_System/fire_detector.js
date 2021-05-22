@@ -10,8 +10,6 @@ var device = awsIot.device({
   host: "amu5mgd3b3zvv-ats.iot.ap-northeast-2.amazonaws.com"
 });
 
-console.log(fire_detector.on)
-
 device.on('connect', function() {
   console.log('connect : fire_detector');
   /*
