@@ -24,6 +24,6 @@ device.on('connect', function() {
   // fire/alarm에 매 3초 마다 항상 화재 알림을 publish 한다. (조건)
 
   setInterval(function() {
-    device.publish('fire/alarm', 'fire alarm!'))
-  }, 3000)
+    device.publish('fire/alarm', 'fire alarm!');
+  }, 3000);
 });
