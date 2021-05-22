@@ -3,8 +3,8 @@
 var awsIot = require('aws-iot-device-sdk')
 
 var device = awsIot.device({
-  certPath: "./fire_sprinkler/75beac1b24-cretificate.pem.crt",
-  keyPath: "./fire_sprinkler/75beac1b24-private.pem.key",
+  keyPath: "./fire_management_system/75beac1b24-private.pem.key",
+  certPath: "./fire_management_systemr/75beac1b24-cretificate.pem.crt",
   caPath: "./AmazonRootCA1.pem",
   clientId: "fire_management_system",
   host: "amu5mgd3b3zvv-ats.iot.ap-northeast-2.amazonaws.com"
