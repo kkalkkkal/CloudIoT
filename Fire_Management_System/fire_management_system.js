@@ -26,7 +26,7 @@ device.on('connect', function() {
 device.on('message', function(topic, payload){
   console.log('message', topic, payload.toString());
 
-  // ghkwo qkftodtl 화재 경고 메시지를 publish 함.
+  // 화재 경보가 울리면 화재 경고 메시지를 publish 함.
   device.publish('fire/alert', "fire! fire! fire!");
 
   // fire/alarm 토픽을 통해 화재 발생을 알게 되면 sprinkler에 activation command를 publish
