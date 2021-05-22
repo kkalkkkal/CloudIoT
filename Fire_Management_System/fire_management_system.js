@@ -27,6 +27,7 @@ device.on('message', function(topic, payload){
   console.log('message', topic, payload.toString());
 
   // 화재 경보가 울리면 화재 경고 메시지를 publish 함.
+  // 현재 구독한 것이 fire/alarm 밖에 없기 때문에 굳이 if문을 안 넣어도 됨. 
   device.publish('fire/alert', "fire! fire! fire!");
 
   // fire/alarm 토픽을 통해 화재 발생을 알게 되면 sprinkler에 activation command를 publish
