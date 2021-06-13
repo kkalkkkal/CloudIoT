@@ -37,7 +37,7 @@ AWS.config.update({
   var res = 'none';
 
   // 비교 진행
-  var result = await new Promise(client.compareFaces(params,function(err, response) {
+  var result = new Promise(client.compareFaces(params,function(err, response) {
    if (err) {
      console.log(err, err.stack); // an error occurred
    } else {
@@ -55,4 +55,6 @@ AWS.config.update({
    } // if
  }));
 
-  console.log(result);
+  var result2 = await result;
+
+  console.log(result2);
