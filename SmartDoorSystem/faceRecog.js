@@ -6,10 +6,14 @@ var bucket        = '2021-faceimage-s3' // the bucketname without s3://
 var photo_source  = "person1.jpg" // 기준점
 var photo_target  = "person1.jpg" // 비교대상
 
+AWS.config.region = 'ap-northeast-2';
+AWS.config.apiVersions = {
+    s3: '2006-03-01',
+};
+
 var config = new AWS.Config({
  accessKeyId: 'AKIAV7ANXPMGACVQ3J23',
  secretAccessKey: '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',
- region: 'ap-northeast-2'
 })
 
   const client = new AWS.Rekognition(); // recognition 호출
