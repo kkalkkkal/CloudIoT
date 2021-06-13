@@ -36,7 +36,7 @@ var test = async function () {
     try {
         // 1st Object
         const co_params1 = {
-            Bucket: "2021-kkalkkkal-s3-test",
+            Bucket: "2021-faceimage-s3",
             Key: 'image/test.jpg',
             Body: fs.createReadStream("./test.jpg") // 카메라로 test.jpg라는 파일이 찍혔다는 가정
         };
