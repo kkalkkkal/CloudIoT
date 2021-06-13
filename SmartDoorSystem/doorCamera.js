@@ -36,9 +36,9 @@ var test = async function () {
     try {
         // 1st Object
         const co_params1 = {
-            Bucket: "2021-faceimage-s3",
+            Bucket: "2021-kkalkkkal-s3-test",
             Key: 'image/test.jpg',
-            Body: fs.createReadStream("./test.jpg") // 카메라로 test.jpg라는 파일이 찍혔다는 가정
+            Body: fs.createReadStream("./test.jpg") // 카메라로 test.jpg라는 파일이 찍혔다는
         };
         var res2 = await createObject(co_params1);
         console.log(res2);
@@ -52,6 +52,7 @@ var test = async function () {
 // JSON 버퍼
 buf = {
   "image" : "image/test.jpg",
+  "notify" : "faceRecog/nofity/door1",
 };
 
 device.on('connect', function() {
