@@ -11,7 +11,7 @@ AWS.config.apiVersions = {
     s3: '2006-03-01',
 };
 
-var config = new AWS.Config({
+AWS.config.update({
  accessKeyId: 'AKIAV7ANXPMGACVQ3J23',
  secretAccessKey: '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',
 })
