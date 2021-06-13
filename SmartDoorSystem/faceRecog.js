@@ -3,8 +3,10 @@
 var AWS = require('aws-sdk');
 var iotdata = new AWS.IotData({
     endpoint : 'amu5mgd3b3zvv-ats.iot.ap-northeast-2.amazonaws.com',
+    apiVersion : '2015-05-28',
     accessKeyId : 'AKIAV7ANXPMGACVQ3J23',
     secretAccessKey : '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'})
+
 
 //var AWS = require('aws-sdk')
 var bucket        = '2021-faceimage-s3' // the bucketname without s3://
@@ -20,6 +22,7 @@ AWS.config.update({
  accessKeyId: 'AKIAV7ANXPMGACVQ3J23',
  secretAccessKey: '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',
 })
+
 
 
 const client = new AWS.Rekognition(); // recognition 호출
@@ -99,7 +102,7 @@ exports.handler = async function (event, context) {
 
                 }
 
-                var res = await iotdata.publish(params2).promise();
+                return iotdata.publish(params2).promise()
             }
         }
 
@@ -107,13 +110,19 @@ exports.handler = async function (event, context) {
     }
 
     var params2 = {
-        topic : event.notify,
+        topic : "faceRecog/notify/door1",
         payload: JSON.stringify({'image' : "none", 'command' : 'reject'}),
         qos : 0
     };
 
-    var res = await iotdata.publish(params2).promise();
-    return res
+    return iotdata.publish(params2,function(err, data) {
+        if(err)
+            console.log(err,err.stack); // an error occurred
+        else
+            console.log(data); // successful response
+    });
+
+    return await iotdata.publish(params2).promise();
 
 
 };

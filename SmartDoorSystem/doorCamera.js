@@ -52,7 +52,6 @@ var test = async function () {
 // JSON 버퍼
 buf = {
   "image" : "image/test.jpg",
-  "notify" : "faceRecog/nofity/door1",
 };
 
 device.on('connect', function() {
