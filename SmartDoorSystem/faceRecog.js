@@ -9,7 +9,7 @@ var iotdata = new AWS.IotData({
 //var AWS = require('aws-sdk')
 var bucket        = '2021-faceimage-s3' // the bucketname without s3://
 var photo_source  = "person1.jpg" // 기준점
-var photo_target  = "person1.jpg" // 비교대상
+var photo_target  = "image/test.jpg" // 비교대상
 
 AWS.config.region = 'ap-northeast-2';
 AWS.config.apiVersions = {
@@ -85,14 +85,14 @@ exports.handler = async function (event, context) {
                 if (step == 1)
                 {
                   var params2 = {
-                      topic : event.notify,
-                      payload: JSON.stringify({'image' : event.image, 'command' : 'unlock'}),
+                      topic : "faceRecog/notify/door1",
+                      payload: JSON.stringify({'image' : "person2", 'command' : 'unlock'}),
                       qos : 0
                   };
 
                 } else {
                   var params2 = {
-                      topic : event.notify,
+                      topic : "faceRecog/notify/door1",
                       payload: JSON.stringify({'image' : "person" + (step + 1), 'command' : 'unlock'}),
                       qos : 0
                   };
