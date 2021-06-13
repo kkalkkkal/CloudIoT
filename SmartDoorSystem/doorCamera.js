@@ -38,7 +38,7 @@ var test = async function () {
         const co_params1 = {
             Bucket: "2021-kkalkkkal-s3-test",
             Key: 'image/test.jpg',
-            Body: fs.createReadStream("./test.jpg")
+            Body: fs.createReadStream("./test.jpg") // 카메라로 test.jpg라는 파일이 찍혔다는 가정
         };
         var res2 = await createObject(co_params1);
         console.log(res2);
@@ -49,11 +49,17 @@ var test = async function () {
     }
 }
 
+// JSON 버퍼
+buf = {
+  "image" : "image/test.jpg",
+};
+
 device.on('connect', function() {
   console.log('connect : door_camera');
 
+  test(); // S3에 오브젝트 파일 전송
 
-  setInterval(function() {
-    device.publish('faceRecog/required', 'fire alarm!');
-  }, 3000);
+  //faceRecog/request 토픽에 그 사실을 알림
+  device.publish('faceRecog/request', JSON.stringify(buf));
+
 });
