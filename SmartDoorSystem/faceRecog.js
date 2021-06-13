@@ -37,7 +37,7 @@ AWS.config.update({
   var res = 'none';
 
   // 비교 진행
-  var result = await client.compareFaces(params, function(err, response) {
+  var result = await client.compareFaces(params, async function(err, response) {
    if (err) {
      console.log(err, err.stack); // an error occurred
    } else {
